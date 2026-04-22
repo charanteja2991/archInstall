@@ -1,0 +1,146 @@
+{
+   "checksum": "437ac3a8c7de3aa9ae27342539b8b5e0",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13420665400852591",
+            "date_last_used": "13421339081640906",
+            "guid": "ed073ef1-a9fb-4173-a6b7-b6ce8d26b158",
+            "id": "9",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Copilot",
+            "type": "url",
+            "url": "https://copilot.microsoft.com/"
+         }, {
+            "date_added": "13421158597591686",
+            "date_last_used": "13421264049827287",
+            "guid": "05570a64-4268-4daa-98f0-082a493bdb41",
+            "id": "17",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Claude",
+            "type": "url",
+            "url": "https://claude.ai/new"
+         }, {
+            "date_added": "13421158497880810",
+            "date_last_used": "13421259197514189",
+            "guid": "c27fc437-7f20-42a8-bde2-4cb990eb5be9",
+            "id": "16",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Gemini",
+            "type": "url",
+            "url": "https://gemini.google.com/app?hl=en-IN"
+         }, {
+            "date_added": "13421250810503840",
+            "date_last_used": "13421338168126059",
+            "guid": "cdf11ec0-e8f7-4758-9de8-14c087ca13c9",
+            "id": "20",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Github",
+            "type": "url",
+            "url": "https://github.com/charanteja2991"
+         }, {
+            "date_added": "13421250617071501",
+            "date_last_used": "13421338874764051",
+            "guid": "b22d0fe3-b712-4542-8535-31aa724e1d8f",
+            "id": "19",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Gmail",
+            "type": "url",
+            "url": "https://mail.google.com/mail/u/0/#inbox"
+         }, {
+            "date_added": "13420617303658229",
+            "date_last_used": "13421255162612791",
+            "guid": "8a3c3820-c537-43d8-9e0c-5931fc0f5ee1",
+            "id": "5",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Google Drive",
+            "type": "url",
+            "url": "https://drive.google.com/drive/my-drive"
+         }, {
+            "date_added": "13420662022283441",
+            "date_last_used": "13420907178631928",
+            "guid": "36d0e9d6-ec8e-40cf-8d38-1adb68477ec6",
+            "id": "7",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "LeetCode",
+            "type": "url",
+            "url": "https://leetcode.com/problemset/"
+         }, {
+            "date_added": "13420709451405565",
+            "date_last_used": "13421334757886770",
+            "guid": "1f01cee0-f162-410a-a124-e88c6ff4b895",
+            "id": "11",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "WhatsApp",
+            "type": "url",
+            "url": "https://web.whatsapp.com/"
+         }, {
+            "date_added": "13420892440821342",
+            "date_last_used": "13421262938091273",
+            "guid": "8c7316a2-d9cb-495f-b2d5-e6283521bb88",
+            "id": "13",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "YouTube",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         }, {
+            "date_added": "13420892721203502",
+            "date_last_used": "13421337725548063",
+            "guid": "3c593698-d049-494f-b3a7-90135a3863f7",
+            "id": "14",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "YouTube Music",
+            "type": "url",
+            "url": "https://music.youtube.com/"
+         } ],
+         "date_added": "13420617185852750",
+         "date_last_used": "0",
+         "date_modified": "13421250826077474",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13420617185852750",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13420617185852750",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
