@@ -1,0 +1,65 @@
+[Custom Commands][net.local.kate-2.desktop]
+Exec=kate -n Unsaved.txt
+Name=Kate Unsaved Document
+
+[Custom Commands][net.local.kate.desktop]
+Exec=kate -n Untitled
+Name=Kate Unsaved Document
+
+[Custom Commands][net.local.playerctl-2.desktop]
+Exec=playerctl previous
+Name=Play Previous Audio
+
+[Custom Commands][net.local.playerctl-3.desktop]
+Exec=playerctl play-pause
+Name=Play - Pause Audio
+
+[Custom Commands][net.local.playerctl-4.desktop]
+Exec=playerctl play-pause
+Name=Play - Pause Audio
+
+[Custom Commands][net.local.playerctl.desktop]
+Exec=playerctl next
+Name=Play Next audio\s
+
+[Custom Commands][net.local.systemctl-2.desktop]
+Exec=systemctl reboot
+Name=Reboot
+
+[Custom Commands][net.local.systemctl.desktop]
+Exec=systemctl poweroff
+Name=Shutdown
+
+[ksmserver][Global Shortcuts]
+Halt Without Confirmation=
+Lock Session=Meta+L; Screensaver
+Log Out=Ctrl+Alt+Del
+Log Out Without Confirmation=Meta+Ctrl+Shift+L
+LogOut=
+Reboot=
+Reboot Without Confirmation=
+Shut Down=
+
+[net.local.kate-2.desktop][Global Shortcuts]
+_launch=
+
+[net.local.kate.desktop][Global Shortcuts]
+_launch=Meta+N
+
+[net.local.playerctl-2.desktop][Global Shortcuts]
+_launch=Meta+Ctrl+J; Meta+Ctrl+A; Meta+Ctrl+Left
+
+[net.local.playerctl-3.desktop][Global Shortcuts]
+_launch=Meta+Ctrl+Space
+
+[net.local.playerctl-4.desktop][Global Shortcuts]
+_launch=
+
+[net.local.playerctl.desktop][Global Shortcuts]
+_launch=Meta+Ctrl+D; Meta+Ctrl+Right; Meta+Ctrl+L
+
+[net.local.systemctl-2.desktop][Global Shortcuts]
+_launch=Meta+Ctrl+Shift+R
+
+[net.local.systemctl.desktop][Global Shortcuts]
+_launch=Meta+Shift+F4

@@ -1,0 +1,14 @@
+go to this file sudo nano /etc/default/grub
+
+replace:
+    GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet ..."
+with:
+    GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet video=VGA-1:1920x1080M"
+
+and type
+sudo grub-mkconfig -o /boot/grub/grub.cfg && reboot
+
+after reboot, open terminal and type
+kscreen-doctor output.VGA-1.mode.1920x1080@60
+
+

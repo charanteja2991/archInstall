@@ -1,0 +1,7 @@
+plasma wayland lo swaync (non-official notification) run aithadi default ni off chesi, danikosam ee commands paste chesi restart / re-login chey
+
+# Stop it now and mask it so it never autostart again
+systemctl --user stop swaync
+systemctl --user mask swaync
+
+hyprland lo already auto start lo untadi so hyprland lo asusal ga pani chestadi.

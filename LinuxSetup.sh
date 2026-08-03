@@ -1,129 +1,72 @@
-#!/bin/bash
+#!/bin/sh
 # ─────────────────────────────────────────
-#  My Arch/Manjaro Bootstrap Script
+# Arch Bootstrap Script
 # ─────────────────────────────────────────
 
-set -e  # Stop if any command fails
-echo "Connect to faster Internet 🚀 Starting setup... "
+systemctl enable NetworkManager
+systemctl start NetworkManager
 
-# ── 2. Install yay (AUR helper) ───────────
+sudo pacman -Syu --noconfirm git base-devel
 
-  git clone https://aur.archlinux.org/yay.git /tmp/yay
-  cd /tmp/yay && makepkg -si --noconfirm
+# ── Install yay ───────────
 
-# ── 3. Install your apps ──────────────────
-yay -S --noconfirm \
-  okular \
-  brave-bin \
-  vlc \
-  fastfetch \
-  htop \
-  git \
-  wget \
-  curl \
-  kitty \
-  plasma-x11-session \
-  arandr \
-  swaybg \
-  swaync \
-  hyprland \
-  rofi \
-  gcc \
-  clang \
-  jre8-openjdk \
-  libreoffice-fresh \
-  elisa \
-  waybar \
-  kdeconnect \
-  hyprshot \
-  ttf-font-awesome \
-  nerd-fonts \
-  ttf-nerd-fonts-symbols \
-  sddm-kcm \
-  plymouth \
-  cmake \
-  cmake-format \
-  zram-generator \
-  zsh-syntax-highlighting \
-  zsh-autosuggestions \
-  zsh \
+git clone https://aur.archlinux.org/yay.git /tmp/yay
+cd /tmp/yay && makepkg -si --noconfirm
 
-# ── 6. Kitty.conf, background opacity ──────────────────
+# ── Installing apps ──────────────────
+
+yay -S --noconfirm okular brave-bin vlc fastfetch htop git wget curl kitty swaybg swaync hyprland rofi gcc libreoffice-fresh strawberry waybar-git kdeconnect hyprshot ttf-font-awesome nerd-fonts ttf-nerd-fonts-symbols sddm-kcm plymouth cmake cmake-format zram-generator zsh-syntax-highlighting zsh-autosuggestions zsh nautilus helium-browser-bin hyprcap kaze-icon-theme-git darkly-bin dolphin kate konsole pavucontrol obsidian ark qtcreator
+
+## --- removed packages ---
+# plasma-x11-session
+# arandr
+# clang
+# replaced elisa with strawberry (music player)
+
+# ── Kitty.conf, background opacity ──────────────────
 
 mkdir -p ~/.config/kitty
 cat > ~/.config/kitty/kitty.conf << 'EOF'
-font_family MesloLGS NF
+font_family CaskaydiaMono Nerd Font
 background_opacity 0.8
 EOF
 
-# ── 7. theme for rofi ──────────────────
+# ── configuring arch linux dot files ──────────────────
 
-cd ~
-git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd rofi
-chmod +x setup.sh
-./setup.sh
-
-# ── 8. configuring arch linux files ──────────────────
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cd ~/temp
-cat zshrc >> ~/.zshrc
-cat xprofile >> ~/.xprofile
-
-bsdtar -xf Hyprland.zip
-cd Hyprland
-cp -r hypr ~/.config
+mkdir -p ~/Documents/temporary  # first documents lo 'temporary' ane folder ni create chestadi
+cd ~/Documents/temporary    # ippudu temporary folder loki velthunnam which we have created in documents
+bsdtar -xf /run/media/$USER/Ventoy/archlinux/Hyprland.zip     # since manam ~/Documents/temporary lo unnam kabatti ventoy lo unna hyprland.zip ni extract cheste, occhi temporary lo padthai
+cp -r hypr ~/.config    # ivi copy chestai .config loki
 cp -r rofi ~/.config
 cp -r waybar ~/.config
+rm -R ~/Documents/temporary     # temporary ni delete chestam since we dont need it anymore
 
 
-# ── 9. Post installation ──────────────────
+## login screen 1080p resolution kosam ##
+#sudo rm /usr/share/sddm/scripts/Xsetup
+#sudo cp /run/media/$USER/Ventoy/archlinux/Xsetup /usr/share/sddm/scripts
+#sudo chmod +x /usr/share/sddm/scripts/Xsetup
 
-echo "Update grub"
-echo "Change the wifi code (some gibberish) in ~/.config/waybar/waybar.conf by command: ip -c a "
-echo "Download minecraft bedrock launcher from the store if needed"
-echo "Change date format to d MMM yyyy, ddd"
-echo "Change kde plasma logo to arch from ~/.config/hypr/"
-echo "Change Background to .png in ~/.config/hypr/"
-echo "
-taskbar {
-    left:widgets{
-        CPU-o-meter
-        CPU core graphs
-        Mem-o-meter
-    }
-    center:apps&launchers{
-        arch linux apps launcher
-        file manager
-        konsole
-        web browser
-        system settings
-        kate
-        Minecraft Bedrock Launcher
-    }
-    right:widgets{
-        system tray
-        time & date
-        virtual desktops (pagers)
-    }
-}"
-echo "Increase all the font by 1 (Settings -> Text & Fonts)"
-echo "Settings -> Colors and themes -> Window Decorations -> Oxygen"
-echo "Settings -> Colors and themes -> Cursors -> Breeze Light"
-echo "Settings -> Colors and themes -> Login Screen -> Breeze"
-echo "Settings -> Colors and themes -> Application Style -> Oxygen"
-echo "Settings -> Colors and themes -> Colors -> Breeze Dark"
-echo ""
-echo "Settings -> Window Management -> Window Behaviour -> Focus follows mouse && ms = 0"
-echo "Settings -> Window Management -> Virtual Desktops -> {row1 - 1,2 ; row2 - 3,4}"
-echo ""
-echo "Settings -> Screen Locking -> {Lock after waking up:0 | Delay before password required: never required}"
-echo ""
-echo "Settings -> Power Management -> {When inactive: Do nothing}"
-echo ""
-echo "Settings -> Session -> {On login, launch apps that were open: start with empty}"
+## templates lo files (nautilus kosam) ##
+cd ~/Templates
+touch 'Empty md File.md'
+touch 'Empty Text File.txt'
+touch 'Empty File'
+
+chmod +x ~/.config/waybar/scripts/archmenu.sh
+chmod +x ~/.config/rofi/launchers/type-7/launcher.sh
+chmod +x ~/.config/rofi/launchers/type-6/launcher.sh
+chmod +x ~/.config/rofi/launchers/type-6/menulauncher.sh
+
+cp /run/media/charanteja/Ventoy/archlinux/DiskCleanup.sh ~/Documents
+chmod +x ~/Documents/DiskCleanup.sh
+
+cp '/run/media/charanteja/Ventoy/archlinux/Notification Deamon Problem (swaync).txt' ~/Desktop
+cp '/run/media/charanteja/Ventoy/archlinux/Post Installation.txt' ~/Desktop
+cp /run/media/charanteja/Ventoy/archlinux/Wayland1080pfix.txt ~/Desktop
 
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cat /run/media/$USER/Ventoy/archlinux/zshrc >> ~/.zshrc
 
-echo "✅ All done! Reboot recommended."
+systemctl reboot

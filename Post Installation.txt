@@ -1,0 +1,133 @@
+* Change the wifi code (some gibberish) in ~/.config/waybar/waybar.conf by command: ip -c a
+* Change date format to d MMM yyyy, ddd
+* Change kde plasma logo to arch from ~/.config/hypr/
+* Change Background to .png in ~/.config/hypr/
+*
+taskbar {
+    left:widgets{
+        arch linux apps launcher
+        CPU-o-meter
+        CPU core graphs
+        Mem-o-meter
+    }
+    center:apps&launchers{
+        file manager
+        konsole
+        web browser
+        system settings
+        kate
+        Minecraft Bedrock Launcher
+    }
+    right:widgets{
+        system tray
+        time & date
+        virtual desktops (pagers)
+    }
+}
+
+*
+Settings {
+    Mouse & Touchpad {
+        Device: Mouse
+        Enable pointer acceleration: false
+    }
+    Keyboard{
+        Keyboard {
+            NumLock on startup: Turn on
+        }
+        Shortcuts {
+            Import
+        }
+    }
+    Colors & themes {
+        Global Theme: Breeze dark
+        Colors: Darkly
+        Application Style: darkly {
+            transparency: 75%-all
+        }
+        Plasma Style: Ant-dark
+        Window Decorations {
+            Darkly {
+                Title alignment: Center(Full width)
+            }
+        }
+        Icons: Kaze-dark
+        Pointers: Breeze light
+    }
+    Text & Font {
+        Adjust All fonts {
+            M+2 nerd font 10pt && Adwaita Mono 8pt
+        }
+    }
+    Window Management {
+        Window Behavior {
+            Foucs {
+                Window activation policy: Focus follows mouse
+                delay Focus by: 0ms
+            }
+        }
+        Desktop Effects {
+            Blur: true {
+                Blur strength: 50
+                noise strength: 0
+                saturation: 40
+            }
+        }
+        Virtual Desktops {
+            Rows: 2
+            Desktops: 4
+        }
+    }
+    Screen Locking {
+        Lock after waking from sleep: false
+        Delay before password required: Never require password
+    }
+    Date and time {
+        Time Zone {
+            India
+        }
+    }
+    Power Management {
+        When Inactive: Do nothing
+    }
+    Users {
+        Name: Charan Teja
+    }
+    Session {
+        Desktop session {
+            On login, launch apps that were open: Start with empty session
+        }
+    }
+}
+
+*
+Desktop {
+    KDE Plasma app launcher icon: ~/.config/hypr/
+    Background: ~/.config/hypr/
+}
+
+*
+Konsole {
+    Settings: Manager Profiles {
+        General {
+            Name: MyProfile
+            Default Profile: true
+        }
+        Apperance {
+            Color scheme & font {
+                White on black: Edit {
+                    Blue Background: true
+                    Background transparency: 30%
+                }
+                Font: Adwaita Mono 10pt
+            }
+        }
+    }
+}
+
+* watch this vid for plasma customisation -> https://www.youtube.com/watch?v=NjB6sPuMaL0&t=107s
+
+*
+qtcreator {
+    https://share.gemini.google/YiXIPW9H0vHo
+}
