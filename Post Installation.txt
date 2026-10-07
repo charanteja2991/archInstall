@@ -121,6 +121,10 @@ Konsole {
                 }
                 Font: Adwaita Mono 10pt
             }
+            Cursor {
+                Blinking: Enable
+                Animation: Enable
+            }
         }
     }
 }

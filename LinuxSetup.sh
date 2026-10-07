@@ -15,8 +15,7 @@ cd /tmp/yay && makepkg -si --noconfirm
 
 # ── Installing apps ──────────────────
 
-yay -S --noconfirm okular brave-bin vlc fastfetch htop git wget curl kitty swaybg swaync hyprland rofi gcc libreoffice-fresh strawberry waybar-git kdeconnect hyprshot ttf-font-awesome nerd-fonts ttf-nerd-fonts-symbols sddm-kcm plymouth cmake cmake-format zram-generator zsh-syntax-highlighting zsh-autosuggestions zsh nautilus helium-browser-bin hyprcap kaze-icon-theme-git darkly-bin dolphin kate konsole pavucontrol obsidian ark qtcreator
-
+yay -S --noconfirm okular brave-bin vlc fastfetch htop git wget curl kitty swaybg swaync hyprland rofi gcc libreoffice-fresh strawberry waybar-git kdeconnect hyprshot ttf-font-awesome nerd-fonts ttf-nerd-fonts-symbols sddm-kcm plymouth cmake cmake-format zram-generator zsh-syntax-highlighting zsh-autosuggestions zsh nautilus helium-browser-bin hyprcap kaze-icon-theme-git darkly-bin dolphin kate konsole pavucontrol obsidian ark qtcreator waybar-module-music-git
 ## --- removed packages ---
 # plasma-x11-session
 # arandr
@@ -29,6 +28,9 @@ mkdir -p ~/.config/kitty
 cat > ~/.config/kitty/kitty.conf << 'EOF'
 font_family CaskaydiaMono Nerd Font
 background_opacity 0.8
+cursor_trail 3
+cursor_trail_decay 0.1 0.4
+cursor_trail_start_threshold 2
 EOF
 
 # ── configuring arch linux dot files ──────────────────
