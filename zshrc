@@ -111,8 +111,12 @@ source $ZSH/oh-my-zsh.sh
 #PROMPT='%F{green}╭──(%B%F{39}%n @ %m%b%F{green})-[%B%F{white}%~%b%F{green}]
 #╰─%B%F{39}$%b%F{reset} '
 
+#PROMPT='
+#%F{green}❮ %B%F{white}%~%b%F{green} ❯%b%F{reset} '
+
 PROMPT='
-%F{green}❮ %B%F{white}%~%b%F{green} ❯ '
+%B%F{white}──────────❮ %B%F{39} %~ %B%F{white} ❯──────────
+%B%F{green}❯%B%F{reset} '
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
