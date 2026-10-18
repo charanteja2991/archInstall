@@ -15,12 +15,14 @@ cd /tmp/yay && makepkg -si --noconfirm
 
 # ── Installing apps ──────────────────
 
-yay -S --noconfirm okular brave-bin vlc fastfetch htop git wget curl kitty swaybg swaync hyprland rofi gcc libreoffice-fresh strawberry waybar-git kdeconnect hyprshot ttf-font-awesome nerd-fonts ttf-nerd-fonts-symbols sddm-kcm plymouth cmake cmake-format zram-generator zsh-syntax-highlighting zsh-autosuggestions zsh nautilus helium-browser-bin hyprcap kaze-icon-theme-git darkly-bin dolphin kate konsole pavucontrol obsidian ark qtcreator waybar-module-music-git
+yay -S --noconfirm okular firefox vlc fastfetch htop git wget curl kitty swaybg swaync hyprland rofi gcc libreoffice-fresh strawberry waybar-git kdeconnect hyprshot ttf-font-awesome nerd-fonts ttf-nerd-fonts-symbols sddm-kcm plymouth cmake cmake-format zram-generator zsh-syntax-highlighting zsh-autosuggestions zsh nautilus hyprcap kaze-icon-theme-git darkly-bin dolphin kate konsole pavucontrol obsidian ark qtcreator waybar-module-music-git
 ## --- removed packages ---
 # plasma-x11-session
 # arandr
 # clang
-# replaced elisa with strawberry (music player)
+# helium-browser-bin
+# replaced 'elisa' with 'strawberry' (music player)
+# replaced 'brave-bin' with 'firefox'
 
 # ── Kitty.conf, background opacity ──────────────────
 
