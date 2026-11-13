@@ -3,6 +3,8 @@
 # Arch Bootstrap Script
 # ─────────────────────────────────────────
 
+cp -r /run/media/$USER/Ventoy/archlinux /tmp #annintini oka temporary place lo pedthadi
+
 systemctl enable NetworkManager
 systemctl start NetworkManager
 
@@ -17,7 +19,7 @@ cd /tmp/yay && makepkg -si --noconfirm
 
 yay -S --noconfirm okular firefox vlc fastfetch htop git wget curl kitty swaybg swaync hyprland rofi gcc libreoffice-fresh strawberry waybar-git kdeconnect hyprshot ttf-font-awesome nerd-fonts ttf-nerd-fonts-symbols sddm-kcm plymouth cmake cmake-format zram-generator zsh-syntax-highlighting zsh-autosuggestions zsh nautilus hyprcap kaze-icon-theme-git darkly-bin dolphin kate konsole pavucontrol obsidian ark qtcreator waybar-module-music-git
 ## --- removed packages ---
-# plasma-x11-session
+# plasma-x11-session [removed :_( ]
 # arandr
 # clang
 # helium-browser-bin
@@ -39,7 +41,7 @@ EOF
 
 mkdir -p ~/Documents/temporary  # first documents lo 'temporary' ane folder ni create chestadi
 cd ~/Documents/temporary    # ippudu temporary folder loki velthunnam which we have created in documents
-bsdtar -xf /run/media/$USER/Ventoy/archlinux/Hyprland.zip     # since manam ~/Documents/temporary lo unnam kabatti ventoy lo unna hyprland.zip ni extract cheste, occhi temporary lo padthai
+bsdtar -xf /tmp/archlinux/Hyprland.zip     # since manam ~/Documents/temporary lo unnam kabatti aa directory lo unna hyprland.zip ni extract cheste, occhi temporary lo padthai
 cp -r hypr ~/.config    # ivi copy chestai .config loki
 cp -r rofi ~/.config
 cp -r waybar ~/.config
@@ -51,7 +53,7 @@ rm -R ~/Documents/temporary     # temporary ni delete chestam since we dont need
 #sudo cp /run/media/$USER/Ventoy/archlinux/Xsetup /usr/share/sddm/scripts
 #sudo chmod +x /usr/share/sddm/scripts/Xsetup
 
-## templates lo files (nautilus kosam) ##
+## templates lo files (nautilus hyprland kosam) ##
 cd ~/Templates
 touch 'Empty md File.md'
 touch 'Empty Text File.txt'
@@ -62,15 +64,16 @@ chmod +x ~/.config/rofi/launchers/type-7/launcher.sh
 chmod +x ~/.config/rofi/launchers/type-6/launcher.sh
 chmod +x ~/.config/rofi/launchers/type-6/menulauncher.sh
 
-cp /run/media/charanteja/Ventoy/archlinux/DiskCleanup.sh ~/Documents
+cp /tmp/archlinux/DiskCleanup.sh ~/Documents
 chmod +x ~/Documents/DiskCleanup.sh
 
-cp '/run/media/charanteja/Ventoy/archlinux/Notification Deamon Problem (swaync).txt' ~/Desktop
-cp '/run/media/charanteja/Ventoy/archlinux/Post Installation.txt' ~/Desktop
-cp /run/media/charanteja/Ventoy/archlinux/Wayland1080pfix.txt ~/Desktop
+cp '/tmp/archlinux/Notification Deamon Problem (swaync).txt' ~/Desktop
+cp '/tmp/archlinux/Post Installation.txt' ~/Desktop
+cp /tmp/archlinux/Wayland1080pfix.txt ~/Desktop
 
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cat /run/media/$USER/Ventoy/archlinux/zshrc >> ~/.zshrc
+cp /tmp/archlinux/.zshrc ~/.zshrc
+cp /tmp/archlinux/.vimrc ~/.vimrc
 
 systemctl reboot
