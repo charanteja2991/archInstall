@@ -66,6 +66,10 @@ onoremap j h
 onoremap k j
 onoremap i k
 
+" 'h' means "inside" for text objects: ciw -> chw, di( -> dh(
+onoremap h i
+xnoremap h i
+
 " since i is going and i need insert, i use a as insert... :)
 nnoremap a i
 
@@ -77,3 +81,50 @@ let g:cpp_attributes_highlight = 1
 let g:cpp_member_highlight = 1
 let g:cpp_simple_highlight = 1
 let g:cpp_operator_highlight = 1
+
+set clipboard=unnamedplus
+
+" ===================================================
+" C++ IDE setup (added)
+" ===================================================
+
+" --- Editor comfort ---
+let mapleader = " "                        " Space is the "leader" key for shortcuts
+set number                                 " line numbers
+set shiftwidth=4 expandtab                 " indent with 4 spaces (matches your tabstop)
+set signcolumn=yes                         " keeps a column on the left for error markers
+set updatetime=300                         " faster error refresh
+set completeopt=menuone,noinsert,noselect  " popup doesn't force-insert a suggestion
+
+" --- Language server (clangd gives completion + error checking) ---
+let g:lsp_diagnostics_echo_cursor = 1      " show error text at the bottom when on that line
+
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  nmap <buffer> gd <plug>(lsp-definition)      " go to definition (Ctrl-o to jump back)
+  nmap <buffer> gr <plug>(lsp-references)      " find all uses
+  nmap <buffer> K  <plug>(lsp-hover)           " show documentation
+  nmap <buffer> <leader>rn <plug>(lsp-rename)  " rename a variable/function everywhere
+  nmap <buffer> ]g <plug>(lsp-next-diagnostic) " jump to next error
+  nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+endfunction
+
+augroup lsp_install
+  autocmd!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+" --- Autocomplete popup: Tab to move, Enter to accept ---
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR>    pumvisible() ? (complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-e>\<CR>") : "\<CR>"
+
+" --- Fuzzy finder ---
+nnoremap <leader>f :Files<CR>              " Space f: find a file by name
+nnoremap <leader>g :Rg<CR>                 " Space g: search text across files
+
+" --- Build and run with F5 (change c++17 to c++98 etc. if you like) ---
+augroup cpp_run
+  autocmd!
+  autocmd FileType cpp nnoremap <buffer> <F5> :w<CR>:!g++ -std=c++17 -Wall -Wextra -g % -o %:r && ./%:r<CR>
+augroup END
