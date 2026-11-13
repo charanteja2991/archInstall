@@ -74,6 +74,8 @@ cp /tmp/archlinux/Wayland1080pfix.txt ~/Desktop
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp /tmp/archlinux/.zshrc ~/.zshrc
+
+mkdir -p ~/.vim/pack/plugins/start; git clone https://github.com/bfrg/vim-c-cpp-modern ~/.vim/pack/plugins/start/vim-c-cpp-modern
 cp /tmp/archlinux/.vimrc ~/.vimrc
 
 systemctl reboot
