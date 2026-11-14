@@ -128,3 +128,15 @@ augroup cpp_run
   autocmd!
   autocmd FileType cpp nnoremap <buffer> <F5> :w<CR>:!g++ -std=c++17 -Wall -Wextra -g % -o %:r && ./%:r<CR>
 augroup END
+
+" --- Auto-close brackets and quotes ---
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+" {<Enter> gives you an indented empty line between the braces
+inoremap {<CR> {<CR>}<Esc>O
+" Typing the closing character when it is already next to the cursor just steps over it
+inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
