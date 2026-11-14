@@ -17,7 +17,7 @@ cd /tmp/yay && makepkg -si --noconfirm
 
 # ── Installing apps ──────────────────
 
-yay -S --noconfirm okular firefox vlc fastfetch htop git wget curl kitty swaybg swaync hyprland rofi gcc libreoffice-fresh strawberry waybar-git kdeconnect hyprshot ttf-font-awesome nerd-fonts ttf-nerd-fonts-symbols sddm-kcm plymouth cmake cmake-format zram-generator zsh-syntax-highlighting zsh-autosuggestions zsh nautilus hyprcap kaze-icon-theme-git darkly-bin dolphin kate konsole pavucontrol obsidian ark qtcreator waybar-module-music-git
+yay -S --noconfirm okular firefox vlc fastfetch htop git wget curl kitty swaybg swaync hyprland rofi gcc libreoffice-fresh strawberry waybar-git kdeconnect hyprshot ttf-font-awesome nerd-fonts ttf-nerd-fonts-symbols sddm-kcm plymouth cmake cmake-format zram-generator zsh-syntax-highlighting zsh-autosuggestions zsh nautilus hyprcap kaze-icon-theme-git darkly-bin dolphin kate konsole pavucontrol obsidian ark qtcreator waybar-module-music-git fzf ripgrep clang gdb
 ## --- removed packages ---
 # plasma-x11-session [removed :_( ]
 # arandr
@@ -76,6 +76,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 cp /tmp/archlinux/.zshrc ~/.zshrc
 
 mkdir -p ~/.vim/pack/plugins/start; git clone https://github.com/bfrg/vim-c-cpp-modern ~/.vim/pack/plugins/start/vim-c-cpp-modern
+
+
+# ── customising vim to be C++ ide ──────────────────
+cd ~/.vim/pack/plugins/start
+
+git clone https://github.com/prabirshrestha/vim-lsp
+git clone https://github.com/mattn/vim-lsp-settings
+git clone https://github.com/prabirshrestha/asyncomplete.vim
+git clone https://github.com/prabirshrestha/asyncomplete-lsp.vim
+git clone https://github.com/junegunn/fzf
+git clone https://github.com/junegunn/fzf.vim
+
 cp /tmp/archlinux/.vimrc ~/.vimrc
 
 systemctl reboot
